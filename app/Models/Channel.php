@@ -10,4 +10,9 @@ class Channel extends Model
         'name',
     ];
 
+    // Channel has many subscription to channels
+    public function subscriptionsToChannels()
+    {
+        return $this->hasMany(SubscriptionToChannel::class);
+    }
 }
