@@ -19,3 +19,5 @@ $router->get('/', function () use ($router) {
 
 $router->post('/users/{user}/subscribe-to-chat-bot/{chatBot}', ['uses' => 'UserController@subscribeToChatBot']);
 $router->post('/users/{user}/subscribe-to-channel/{channel}', ['uses' => 'UserController@subscribeToChannel']);
+$router->post('/channels/{channel}/send-message-to-subscribers', ['uses' => 'MessageController@sendMessageToSubscribers']);
+$router->post('/webhook/messenger', ['uses' => 'WebhookController@handleMessengerWebhook']);
