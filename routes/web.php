@@ -16,3 +16,6 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->post('/users/{user}/subscribe-to-chat-bot/{chatBot}', ['uses' => 'UserController@subscribeToChatBot']);
+$router->post('/users/{user}/subscribe-to-channel/{channel}', ['uses' => 'UserController@subscribeToChannel']);
